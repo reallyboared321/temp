@@ -1044,3 +1044,4 @@ genv.setrenderproperty = newcclosure(function(x, y, z)
 end);
 
 genv.drawingLoaded = true;
+end
