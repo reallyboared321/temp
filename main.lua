@@ -69,8 +69,7 @@ titleText.Visible = true
 titleText.ZIndex = 999
 
 -- Store title drawings for cleanup
-table.insert(library.alldrawings, titleBar)
-table.insert(library.alldrawings, titleText)
+
 
 -- Helper to create glow effect
 local function createGlowEffect(parentDrawing, offset, sizeAdjust)
