@@ -1,3 +1,6 @@
+-- Global Toggle
+_G.EnableMarkerHighlight = false
+
 -- Settings
 local newSize = Vector3.new(5, 5, 5)
 local originalSize = Vector3.new(1, 1, 1)
@@ -28,6 +31,12 @@ end
 
 -- Mouse move to detect hits
 mouse.Move:Connect(function()
+	if not _G.EnableMarkerHighlight then
+		resetLastMarker()
+		lastObject = nil
+		return
+	end
+
 	local unitRay = workspace.CurrentCamera:ScreenPointToRay(mouse.X, mouse.Y)
 	local raycastParams = RaycastParams.new()
 	raycastParams.FilterDescendantsInstances = {player.Character}
